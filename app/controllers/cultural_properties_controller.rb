@@ -1,0 +1,2 @@
+class CulturalPropertiesController < ApplicationController
+end
