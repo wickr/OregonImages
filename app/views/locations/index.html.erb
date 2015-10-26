@@ -6,6 +6,9 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>County</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
     <th colspan="3"></th>
   </tr>
  
@@ -13,6 +16,9 @@
     <tr>
       <td><%= link_to location.title, location_path(location) %></td>
       <td><%= location.description %></td>
+      <td><%= location.county %></td>
+      <td><%= location.lat %></td>
+      <td><%= location.lng %></td>
       <td><%= link_to 'View', location_path(location) %></td>
       <td><%= link_to 'Edit', edit_location_path(location) %></td>
       <td><%= link_to 'Delete', location_path(location),

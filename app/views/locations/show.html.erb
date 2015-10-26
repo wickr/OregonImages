@@ -1,11 +1,26 @@
 <p>
   <strong>Title:</strong>
-  <%= @image.title %>
+  <%= @location.title %>
 </p>
  
 <p>
   <strong>Description:</strong>
-  <%= @image.description %>
+  <%= @location.description %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @location.county %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.lat %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.lng %>
 </p>
 
 <%= link_to 'Return to Locations List', locations_path %>
