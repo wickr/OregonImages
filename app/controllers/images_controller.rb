@@ -44,6 +44,6 @@ class ImagesController < ApplicationController
 
   private
     def image_params
-      params.require(:image).permit(:title, :description, :picture)
+      params.require(:image).permit(:title, :description, :picture, :cultural_property_id)
     end
 end

@@ -10,4 +10,9 @@
   <%= @image.description %>
 </p>
 
+<p>
+  <strong>Cultural Property:</strong>
+  <%= CulturalProperty.find(@image.cultural_property_id).title if @image.cultural_property_id %>
+</p>
+
 <%= link_to 'Return to Images List', images_path %>
