@@ -9,6 +9,7 @@
     <th>County</th>
     <th>Latitude</th>
     <th>Longitude</th>
+    <th>Cultural Properties</th>
     <th colspan="3"></th>
   </tr>
  
@@ -19,6 +20,7 @@
       <td><%= location.county %></td>
       <td><%= location.lat %></td>
       <td><%= location.lng %></td>
+      <td><%= link_to (CulturalProperty.where(:location_id => location).count), location_path(location) %></td>
       <td><%= link_to 'View', location_path(location) %></td>
       <td><%= link_to 'Edit', edit_location_path(location) %></td>
       <td><%= link_to 'Delete', location_path(location),

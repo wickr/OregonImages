@@ -1,3 +1,5 @@
+<h2>Cultural Property</h2>
+
 <p>
   <strong>Title:</strong>
   <%= @cp.title %>
@@ -6,6 +8,11 @@
 <p>
   <strong>Description:</strong>
   <%= @cp.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= link_to (Location.find(@cp.location_id).title), location_path(Location.find(@cp.location_id)) if @cp.location_id %>
 </p>
 
 <% Image.where(:cultural_property_id => @cp).in_groups_of(3).each do |image_array| %>

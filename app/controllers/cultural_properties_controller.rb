@@ -44,6 +44,6 @@ class CulturalPropertiesController < ApplicationController
 
   private
     def cp_params
-      params.require(:cultural_property).permit(:title, :description)
+      params.require(:cultural_property).permit(:title, :description, :location_id)
     end
 end

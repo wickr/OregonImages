@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026035224) do
+ActiveRecord::Schema.define(version: 20151026054659) do
 
   create_table "cultural_properties", force: :cascade do |t|
     t.string   "title"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20151026035224) do
     t.string   "address"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "location_id"
   end
+
+  add_index "cultural_properties", ["location_id"], name: "index_cultural_properties_on_location_id"
 
   create_table "images", force: :cascade do |t|
     t.string   "title"

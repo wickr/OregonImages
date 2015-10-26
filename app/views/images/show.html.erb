@@ -12,7 +12,7 @@
 
 <p>
   <strong>Cultural Property:</strong>
-  <%= CulturalProperty.find(@image.cultural_property_id).title if @image.cultural_property_id %>
+  <%= link_to (CulturalProperty.find(@image.cultural_property_id).title), cultural_property_path(CulturalProperty.find(@image.cultural_property_id)) if @image.cultural_property_id %>
 </p>
 
 <%= link_to 'Return to Images List', images_path %>

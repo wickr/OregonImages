@@ -1,3 +1,5 @@
+<h2>Location</h2>
+
 <p>
   <strong>Title:</strong>
   <%= @location.title %>
@@ -21,6 +23,15 @@
 <p>
   <strong>Longitude:</strong>
   <%= @location.lng %>
+</p>
+
+<p>
+  <strong>Cultural Properties:</strong>
+  <ul>
+    <% CulturalProperty.where(:location_id => @location).each do |cp| %>
+      <li><%= link_to cp.title, cultural_property_path(cp) %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Return to Locations List', locations_path %>
