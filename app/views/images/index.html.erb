@@ -4,6 +4,7 @@
 
 <table class="table table-striped">
   <tr>
+    <th>Image</th>
     <th>Title</th>
     <th>Description</th>
     <th colspan="3"></th>
@@ -11,6 +12,7 @@
  
   <% @images.each do |image| %>
     <tr>
+      <td><%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %></td>
       <td><%= link_to image.title, image_path(image) %></td>
       <td><%= image.description %></td>
       <td><%= link_to 'View', image_path(image) %></td>
