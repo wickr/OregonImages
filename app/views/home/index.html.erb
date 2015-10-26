@@ -1,3 +1,23 @@
 <h1>Oregon Images</h1>
 
-<%= link_to 'Image List', controller: 'images' %>
+<p>Browse <%= link_to 'Images', images_path %>, <%= link_to 'Cultural Properties', cultural_properties_path %>, or <%= link_to 'Locations', locations_path %></p>
+
+<% Image.all.in_groups_of(3).each do |image_array| %>
+  <div class="row">
+
+    <% image_array.each do |image| %>
+      <% if !image.nil? %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %>
+            <div class="caption">
+              <h4><%= image.title %></h4>
+              <p><%= image.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+<% end %>
