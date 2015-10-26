@@ -1,0 +1,23 @@
+<h1>Cultural Properties List</h1>
+ 
+<%= link_to 'New Cultural Property', new_cultural_property_path %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @cps.each do |cp| %>
+    <tr>
+      <td><%= link_to cp.title, cultural_property_path(cp) %></td>
+      <td><%= cp.description %></td>
+      <td><%= link_to 'View', cultural_property_path(cp) %></td>
+      <td><%= link_to 'Edit', edit_cultural_property_path(cp) %></td>
+      <td><%= link_to 'Delete', cutural_property_path(cp),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
